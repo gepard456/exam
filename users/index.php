@@ -99,12 +99,12 @@ $users = DataBase::getInstance()->getAll('users')->results();
                       <td><?php echo $objUser->email?></td>
                       <td>
                           <?php if($currentUser->hasPermissions('admin')):?>
-                              <a href=".?down=<?php echo $currentUser->data()->id?>" class="btn btn-danger">Разжаловать</a>
+                              <a href=".?down=<?php echo $objUser->id?>" class="btn btn-danger">Разжаловать</a>
                           <?php else:?>
-                            <a href=".?up=<?php echo $currentUser->data()->id?>" class="btn btn-success">Назначить администратором</a>
+                            <a href=".?up=<?php echo $objUser->id?>" class="btn btn-success">Назначить администратором</a>
                           <?php endif?>
                           <a href="edit.php?id=<?php echo $objUser->id?>" class="btn btn-warning">Редактировать</a>
-                          <a href=".?delete=<?php echo $currentUser->data()->id?>" class="btn btn-danger" onclick="return confirm('Вы уверены?');">Удалить</a>
+                          <a href=".?delete=<?php echo $objUser->id?>" class="btn btn-danger" onclick="return confirm('Вы уверены?');">Удалить</a>
                       </td>
                   </tr>
               <?php endforeach?>
